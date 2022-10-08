@@ -1,0 +1,1457 @@
+2022-10-08 18:10:51.274 | ERROR    | __main__:handle_docs_photo:43 - An error has been caught in function 'handle_docs_photo', process 'MainProcess' (3371), thread 'MainThread' (4606322176):
+Traceback (most recent call last):
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 96, in <module>
+    executor.start_polling(dp)
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x11f004160>
+    │        └ <function start_polling at 0x11efe6560>
+    └ <module 'aiogram.utils.executor' from '/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/util...
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x11efe6f80>
+    └ <aiogram.utils.executor.Executor object at 0x11f005120>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x10c4d3a30>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 595, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x10c4dd5a0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 1881, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x10c35c280>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 51774198, "message": {"message_id": 104, "from": {"id": 400923372, "is_bot": false, "first_name": "Log...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x11f004160>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1...
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x11eeb70d0>
+                 │    │                │      └ <Update {"update_id": 51774198, "message": {"message_id": 104, "from": {"id": 400923372, "is_bot": false, "first_name": "Loga...
+                 │    │                └ <function Handler.notify at 0x11eefd5a0>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x11f004280>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x11f004160>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Message {"message_id": 104, "from": {"id": 400923372, "is_bot": false, "first_name": "Logan", "last_name": "Wyne", "usernam...
+                     │           └ <function handle_docs_photo at 0x11f001900>
+                     └ Handler.HandlerObj(handler=<function handle_docs_photo at 0x11f001900>, spec=FullArgSpec(args=['message'], varargs=None, vark...
+
+> File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 43, in handle_docs_photo
+    test_movie(f'{name}.mp4')
+    └ <function test_movie at 0x11f001510>
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 32, in test_movie
+    clip1 = (VideoFileClip(path).subclip((1,0000),(1,300)))
+             │             └ '400923372.mp4'
+             └ <class 'moviepy.video.io.VideoFileClip.VideoFileClip'>
+
+  File "<decorator-gen-36>", line 2, in subclip
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/moviepy/decorators.py", line 89, in wrapper
+    return f(*new_a, **new_kw)
+           │  │        └ {}
+           │  └ [<moviepy.video.io.VideoFileClip.VideoFileClip object at 0x11f007d30>, 60, 360]
+           └ <function Clip.subclip at 0x1169bf130>
+  File "<decorator-gen-35>", line 2, in subclip
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/moviepy/decorators.py", line 29, in apply_to_mask
+    newclip = f(clip, *a, **k)
+              │ │      │    └ {}
+              │ │      └ (60, 360)
+              │ └ <moviepy.video.io.VideoFileClip.VideoFileClip object at 0x11f007d30>
+              └ <function Clip.subclip at 0x1169bf010>
+  File "<decorator-gen-34>", line 2, in subclip
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/moviepy/decorators.py", line 41, in apply_to_audio
+    newclip = f(clip, *a, **k)
+              │ │      │    └ {}
+              │ │      └ (60, 360)
+              │ └ <moviepy.video.io.VideoFileClip.VideoFileClip object at 0x11f007d30>
+              └ <function Clip.subclip at 0x1169bed40>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/moviepy/Clip.py", line 385, in subclip
+    raise ValueError("t_start (%.02f) " % t_start +
+                                          └ 60
+
+ValueError: t_start (60.00) should be smaller than the clip's duration (9.13).
+2022-10-08 18:17:18.682 | ERROR    | __main__:handle_docs_photo:45 - An error has been caught in function 'handle_docs_photo', process 'MainProcess' (3513), thread 'MainThread' (4593452544):
+Traceback (most recent call last):
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 98, in <module>
+    executor.start_polling(dp)
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x11f6802b0>
+    │        └ <function start_polling at 0x11f64e5f0>
+    └ <module 'aiogram.utils.executor' from '/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/util...
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x11f64f010>
+    └ <aiogram.utils.executor.Executor object at 0x11f681270>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x110843ac0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 595, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x11084d630>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 1881, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x1106c8310>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 51774203, "message": {"message_id": 111, "from": {"id": 400923372, "is_bot": false, "first_name": "Log...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x11f6802b0>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1...
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x11f537220>
+                 │    │                │      └ <Update {"update_id": 51774203, "message": {"message_id": 111, "from": {"id": 400923372, "is_bot": false, "first_name": "Loga...
+                 │    │                └ <function Handler.notify at 0x11f57d630>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x11f6803d0>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x11f6802b0>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Message {"message_id": 111, "from": {"id": 400923372, "is_bot": false, "first_name": "Logan", "last_name": "Wyne", "usernam...
+                     │           └ <function handle_docs_photo at 0x11f679990>
+                     └ Handler.HandlerObj(handler=<function handle_docs_photo at 0x11f679990>, spec=FullArgSpec(args=['message'], varargs=None, vark...
+
+> File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 45, in handle_docs_photo
+    test_movie(f'{name}.mp4')
+    └ <function test_movie at 0x11f6795a0>
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 34, in test_movie
+    clip1 = (VideoFileClip(path).subclip((1,a),(1,float(p))))
+             │             │                │           └ '03.00'
+             │             │                └ 0.0
+             │             └ '400923372.mp4'
+             └ <class 'moviepy.video.io.VideoFileClip.VideoFileClip'>
+
+  File "<decorator-gen-36>", line 2, in subclip
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/moviepy/decorators.py", line 89, in wrapper
+    return f(*new_a, **new_kw)
+           │  │        └ {}
+           │  └ [<moviepy.video.io.VideoFileClip.VideoFileClip object at 0x11f683e80>, 60.0, 63.0]
+           └ <function Clip.subclip at 0x114d771c0>
+  File "<decorator-gen-35>", line 2, in subclip
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/moviepy/decorators.py", line 29, in apply_to_mask
+    newclip = f(clip, *a, **k)
+              │ │      │    └ {}
+              │ │      └ (60.0, 63.0)
+              │ └ <moviepy.video.io.VideoFileClip.VideoFileClip object at 0x11f683e80>
+              └ <function Clip.subclip at 0x114d770a0>
+  File "<decorator-gen-34>", line 2, in subclip
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/moviepy/decorators.py", line 41, in apply_to_audio
+    newclip = f(clip, *a, **k)
+              │ │      │    └ {}
+              │ │      └ (60.0, 63.0)
+              │ └ <moviepy.video.io.VideoFileClip.VideoFileClip object at 0x11f683e80>
+              └ <function Clip.subclip at 0x114d76dd0>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/moviepy/Clip.py", line 385, in subclip
+    raise ValueError("t_start (%.02f) " % t_start +
+                                          └ 60.0
+
+ValueError: t_start (60.00) should be smaller than the clip's duration (8.57).
+2022-10-08 18:18:11.459 | ERROR    | __main__:handle_docs_photo:45 - An error has been caught in function 'handle_docs_photo', process 'MainProcess' (3549), thread 'MainThread' (4583126528):
+Traceback (most recent call last):
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 98, in <module>
+    executor.start_polling(dp)
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x11d43c1f0>
+    │        └ <function start_polling at 0x11d40a5f0>
+    └ <module 'aiogram.utils.executor' from '/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/util...
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x11d40b010>
+    └ <aiogram.utils.executor.Executor object at 0x11d43d1b0>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x10e59bac0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 595, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x10e5a9630>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 1881, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x10e428310>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 51774204, "message": {"message_id": 113, "from": {"id": 400923372, "is_bot": false, "first_name": "Log...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x11d43c1f0>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1...
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x11d2ef160>
+                 │    │                │      └ <Update {"update_id": 51774204, "message": {"message_id": 113, "from": {"id": 400923372, "is_bot": false, "first_name": "Loga...
+                 │    │                └ <function Handler.notify at 0x11d339630>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x11d43c310>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x11d43c1f0>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Message {"message_id": 113, "from": {"id": 400923372, "is_bot": false, "first_name": "Logan", "last_name": "Wyne", "usernam...
+                     │           └ <function handle_docs_photo at 0x11d435990>
+                     └ Handler.HandlerObj(handler=<function handle_docs_photo at 0x11d435990>, spec=FullArgSpec(args=['message'], varargs=None, vark...
+
+> File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 45, in handle_docs_photo
+    test_movie(f'{name}.mp4')
+    └ <function test_movie at 0x11d4355a0>
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 38, in test_movie
+    cropped_clip.write_videofile(path)
+    │            │               └ '400923372.mp4'
+    │            └ <function VideoClip.write_videofile at 0x110a02440>
+    └ <moviepy.video.io.VideoFileClip.VideoFileClip object at 0x11d48d5d0>
+
+  File "<decorator-gen-55>", line 2, in write_videofile
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/moviepy/decorators.py", line 54, in requires_duration
+    return f(clip, *a, **k)
+           │ │      │    └ {}
+           │ │      └ ('400923372.mp4', None, None, None, True, 44100, 'medium', 4, None, None, 2000, None, True, True, False, True, None, None, 'b...
+           │ └ <moviepy.video.io.VideoFileClip.VideoFileClip object at 0x11d48d5d0>
+           └ <function VideoClip.write_videofile at 0x110a023b0>
+  File "<decorator-gen-54>", line 2, in write_videofile
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/moviepy/decorators.py", line 135, in use_clip_fps_by_default
+    return f(clip, *new_a, **new_kw)
+           │ │      │        └ {}
+           │ │      └ ['400923372.mp4', 30.0, None, None, True, 44100, 'medium', 4, None, None, 2000, None, True, True, False, True, None, None, 'b...
+           │ └ <moviepy.video.io.VideoFileClip.VideoFileClip object at 0x11d48d5d0>
+           └ <function VideoClip.write_videofile at 0x110a02320>
+  File "<decorator-gen-53>", line 2, in write_videofile
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/moviepy/decorators.py", line 22, in convert_masks_to_RGB
+    return f(clip, *a, **k)
+           │ │      │    └ {}
+           │ │      └ ('400923372.mp4', 30.0, None, None, True, 44100, 'medium', 4, None, None, 2000, None, True, True, False, True, None, None, 'b...
+           │ └ <moviepy.video.io.VideoFileClip.VideoFileClip object at 0x11d48d5d0>
+           └ <function VideoClip.write_videofile at 0x110a02050>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/moviepy/video/VideoClip.py", line 293, in write_videofile
+    self.audio.write_audiofile(audiofile, audio_fps,
+    │    │     │               │          └ 44100
+    │    │     │               └ '400923372TEMP_MPY_wvf_snd.mp3'
+    │    │     └ <function AudioClip.write_audiofile at 0x1109efc70>
+    │    └ <moviepy.audio.io.AudioFileClip.AudioFileClip object at 0x11d48d360>
+    └ <moviepy.video.io.VideoFileClip.VideoFileClip object at 0x11d48d5d0>
+  File "<decorator-gen-45>", line 2, in write_audiofile
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/moviepy/decorators.py", line 54, in requires_duration
+    return f(clip, *a, **k)
+           │ │      │    └ {}
+           │ │      └ ('400923372TEMP_MPY_wvf_snd.mp3', 44100, 4, 2000, 'libmp3lame', None, None, False, True, <proglog.proglog.TqdmProgressBarLogg...
+           │ └ <moviepy.audio.io.AudioFileClip.AudioFileClip object at 0x11d48d360>
+           └ <function AudioClip.write_audiofile at 0x1109efb50>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/moviepy/audio/AudioClip.py", line 206, in write_audiofile
+    return ffmpeg_audiowrite(self, filename, fps, nbytes, buffersize,
+           │                 │     │         │    │       └ 2000
+           │                 │     │         │    └ 4
+           │                 │     │         └ 44100
+           │                 │     └ '400923372TEMP_MPY_wvf_snd.mp3'
+           │                 └ <moviepy.audio.io.AudioFileClip.AudioFileClip object at 0x11d48d360>
+           └ <function ffmpeg_audiowrite at 0x1109ed000>
+  File "<decorator-gen-9>", line 2, in ffmpeg_audiowrite
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/moviepy/decorators.py", line 54, in requires_duration
+    return f(clip, *a, **k)
+           │ │      │    └ {}
+           │ │      └ ('400923372TEMP_MPY_wvf_snd.mp3', 44100, 4, 2000, 'libmp3lame', None, False, True, None, <proglog.proglog.TqdmProgressBarLogg...
+           │ └ <moviepy.audio.io.AudioFileClip.AudioFileClip object at 0x11d48d360>
+           └ <function ffmpeg_audiowrite at 0x11078dab0>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/moviepy/audio/io/ffmpeg_audiowriter.py", line 166, in ffmpeg_audiowrite
+    for chunk in clip.iter_chunks(chunksize=buffersize,
+        │        │    │                     └ 2000
+        │        │    └ <function AudioClip.iter_chunks at 0x1109ef9a0>
+        │        └ <moviepy.audio.io.AudioFileClip.AudioFileClip object at 0x11d48d360>
+        └ array([[ 1638400,  -524288],
+                 [ -589824,  -327680],
+                 [-2686976,   262144],
+                 ...,
+                 [       0,        0...
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/moviepy/audio/AudioClip.py", line 85, in iter_chunks
+    yield self.to_soundarray(tt, nbytes=nbytes, quantize=quantize,
+          │    │             │          │                └ True
+          │    │             │          └ 4
+          │    │             └ array([8.6114966 , 8.61151927, 8.61154195, ..., 8.65675737, 8.65678005,
+          │    │                      8.65680272])
+          │    └ <function AudioClip.to_soundarray at 0x1109efac0>
+          └ <moviepy.audio.io.AudioFileClip.AudioFileClip object at 0x11d48d360>
+  File "<decorator-gen-44>", line 2, in to_soundarray
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/moviepy/decorators.py", line 54, in requires_duration
+    return f(clip, *a, **k)
+           │ │      │    └ {}
+           │ │      └ (array([8.6114966 , 8.61151927, 8.61154195, ..., 8.65675737, 8.65678005,
+           │ │               8.65680272]), 44100, True, 4, 2000)
+           │ └ <moviepy.audio.io.AudioFileClip.AudioFileClip object at 0x11d48d360>
+           └ <function AudioClip.to_soundarray at 0x1109ef910>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/moviepy/audio/AudioClip.py", line 127, in to_soundarray
+    snd_array = self.get_frame(tt)
+                │    │         └ array([8.6114966 , 8.61151927, 8.61154195, ..., 8.65675737, 8.65678005,
+                │    │                  8.65680272])
+                │    └ <function Clip.get_frame at 0x1109ed5a0>
+                └ <moviepy.audio.io.AudioFileClip.AudioFileClip object at 0x11d48d360>
+  File "<decorator-gen-11>", line 2, in get_frame
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/moviepy/decorators.py", line 89, in wrapper
+    return f(*new_a, **new_kw)
+           │  │        └ {}
+           │  └ [<moviepy.audio.io.AudioFileClip.AudioFileClip object at 0x11d48d360>, array([8.6114966 , 8.61151927, 8.61154195, ..., 8.6567...
+           └ <function Clip.get_frame at 0x1109ed3f0>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/moviepy/Clip.py", line 93, in get_frame
+    return self.make_frame(t)
+           │    │          └ array([8.6114966 , 8.61151927, 8.61154195, ..., 8.65675737, 8.65678005,
+           │    │                   8.65680272])
+           │    └ <function Clip.fl.<locals>.<lambda> at 0x11d46c8b0>
+           └ <moviepy.audio.io.AudioFileClip.AudioFileClip object at 0x11d48d360>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/moviepy/Clip.py", line 136, in <lambda>
+    newclip = self.set_make_frame(lambda t: fun(self.get_frame, t))
+              │    │                     │  │   │    │          └ array([8.6114966 , 8.61151927, 8.61154195, ..., 8.65675737, 8.65678005,
+              │    │                     │  │   │    │                   8.65680272])
+              │    │                     │  │   │    └ <function Clip.get_frame at 0x1109ed5a0>
+              │    │                     │  │   └ <moviepy.audio.io.AudioFileClip.AudioFileClip object at 0x11d48c580>
+              │    │                     │  └ <function Clip.fl_time.<locals>.<lambda> at 0x11d46c820>
+              │    │                     └ array([8.6114966 , 8.61151927, 8.61154195, ..., 8.65675737, 8.65678005,
+              │    │                              8.65680272])
+              │    └ <function Clip.set_make_frame at 0x1109ee830>
+              └ <moviepy.audio.io.AudioFileClip.AudioFileClip object at 0x11d48c580>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/moviepy/Clip.py", line 187, in <lambda>
+    return self.fl(lambda gf, t: gf(t_func(t)), apply_to,
+                          │   │  │  │      └ array([8.6114966 , 8.61151927, 8.61154195, ..., 8.65675737, 8.65678005,
+                          │   │  │  │               8.65680272])
+                          │   │  │  └ <function Clip.subclip.<locals>.<lambda> at 0x11d46c790>
+                          │   │  └ <bound method Clip.get_frame of <moviepy.audio.io.AudioFileClip.AudioFileClip object at 0x11d48c580>>
+                          │   └ array([8.6114966 , 8.61151927, 8.61154195, ..., 8.65675737, 8.65678005,
+                          │            8.65680272])
+                          └ <bound method Clip.get_frame of <moviepy.audio.io.AudioFileClip.AudioFileClip object at 0x11d48c580>>
+  File "<decorator-gen-11>", line 2, in get_frame
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/moviepy/decorators.py", line 89, in wrapper
+    return f(*new_a, **new_kw)
+           │  │        └ {}
+           │  └ [<moviepy.audio.io.AudioFileClip.AudioFileClip object at 0x11d48c580>, array([8.6114966 , 8.61151927, 8.61154195, ..., 8.6567...
+           └ <function Clip.get_frame at 0x1109ed3f0>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/moviepy/Clip.py", line 93, in get_frame
+    return self.make_frame(t)
+           │    │          └ array([8.6114966 , 8.61151927, 8.61154195, ..., 8.65675737, 8.65678005,
+           │    │                   8.65680272])
+           │    └ <function AudioFileClip.__init__.<locals>.<lambda> at 0x11d46c700>
+           └ <moviepy.audio.io.AudioFileClip.AudioFileClip object at 0x11d48c580>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/moviepy/audio/io/AudioFileClip.py", line 77, in <lambda>
+    self.make_frame = lambda t: self.reader.get_frame(t)
+    │    │                   │  │    │      │         └ array([8.6114966 , 8.61151927, 8.61154195, ..., 8.65675737, 8.65678005,
+    │    │                   │  │    │      │                  8.65680272])
+    │    │                   │  │    │      └ <function FFMPEG_AudioReader.get_frame at 0x110a009d0>
+    │    │                   │  │    └ <moviepy.audio.io.readers.FFMPEG_AudioReader object at 0x11d48cfd0>
+    │    │                   │  └ <moviepy.audio.io.AudioFileClip.AudioFileClip object at 0x11d48c310>
+    │    │                   └ array([8.6114966 , 8.61151927, 8.61154195, ..., 8.65675737, 8.65678005,
+    │    │                            8.65680272])
+    │    └ <function AudioFileClip.__init__.<locals>.<lambda> at 0x11d46c700>
+    └ <moviepy.audio.io.AudioFileClip.AudioFileClip object at 0x11d48c310>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/moviepy/audio/io/readers.py", line 170, in get_frame
+    raise IOError("Error in file %s, "%(self.filename)+
+                                        │    └ '400923372.mp4'
+                                        └ <moviepy.audio.io.readers.FFMPEG_AudioReader object at 0x11d48cfd0>
+
+OSError: Error in file 400923372.mp4, Accessing time t=8.61-8.66 seconds, with clip duration=8 seconds, 
+2022-10-08 18:36:44.980 | ERROR    | __main__:handle_docs_photo:50 - An error has been caught in function 'handle_docs_photo', process 'MainProcess' (3849), thread 'MainThread' (4337391104):
+Traceback (most recent call last):
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 103, in <module>
+    executor.start_polling(dp)
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x111278310>
+    │        └ <function start_polling at 0x11124e5f0>
+    └ <module 'aiogram.utils.executor' from '/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/util...
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x11124f010>
+    └ <aiogram.utils.executor.Executor object at 0x1112792d0>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x10233bac0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 595, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x102349630>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 1881, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x1021c8310>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 51774207, "message": {"message_id": 119, "from": {"id": 400923372, "is_bot": false, "first_name": "Log...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x111278310>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1...
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x111133280>
+                 │    │                │      └ <Update {"update_id": 51774207, "message": {"message_id": 119, "from": {"id": 400923372, "is_bot": false, "first_name": "Loga...
+                 │    │                └ <function Handler.notify at 0x11117d630>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x111278430>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x111278310>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Message {"message_id": 119, "from": {"id": 400923372, "is_bot": false, "first_name": "Logan", "last_name": "Wyne", "usernam...
+                     │           └ <function handle_docs_photo at 0x11127d990>
+                     └ Handler.HandlerObj(handler=<function handle_docs_photo at 0x11127d990>, spec=FullArgSpec(args=['message'], varargs=None, vark...
+
+> File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 50, in handle_docs_photo
+    test_movie(f'{name}.mp4')
+    └ <function test_movie at 0x11127d5a0>
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 42, in test_movie
+    os.system(f'ffmpeg -i {path} -filter:v "crop={w}:{w}:{0}:{y/4}" {path}1')
+    │  └ <built-in function system>
+    └ <module 'os' from '/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/os.py'>
+
+NameError: name 'y' is not defined
+2022-10-08 18:38:54.034 | ERROR    | __main__:handle_docs_photo:50 - An error has been caught in function 'handle_docs_photo', process 'MainProcess' (3942), thread 'MainThread' (4656158208):
+Traceback (most recent call last):
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 103, in <module>
+    executor.start_polling(dp)
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x116550280>
+    │        └ <function start_polling at 0x1165225f0>
+    └ <module 'aiogram.utils.executor' from '/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/util...
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x116523010>
+    └ <aiogram.utils.executor.Executor object at 0x116551240>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x1076cfac0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 595, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x1076d9630>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 1881, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x107554310>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 51774209, "message": {"message_id": 123, "from": {"id": 400923372, "is_bot": false, "first_name": "Log...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x116550280>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1...
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x11640b1f0>
+                 │    │                │      └ <Update {"update_id": 51774209, "message": {"message_id": 123, "from": {"id": 400923372, "is_bot": false, "first_name": "Loga...
+                 │    │                └ <function Handler.notify at 0x116451630>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x1165503a0>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x116550280>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Message {"message_id": 123, "from": {"id": 400923372, "is_bot": false, "first_name": "Logan", "last_name": "Wyne", "usernam...
+                     │           └ <function handle_docs_photo at 0x116549990>
+                     └ Handler.HandlerObj(handler=<function handle_docs_photo at 0x116549990>, spec=FullArgSpec(args=['message'], varargs=None, vark...
+
+> File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 50, in handle_docs_photo
+    test_movie(f'{name}')
+    └ <function test_movie at 0x1165495a0>
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 34, in test_movie
+    clip1 = (VideoFileClip(path).subclip((0,a),(0,float(p))))
+             │             │                │           └ '03.00'
+             │             │                └ 0.0
+             │             └ '400923372'
+             └ <class 'moviepy.video.io.VideoFileClip.VideoFileClip'>
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/moviepy/video/io/VideoFileClip.py", line 88, in __init__
+    self.reader = FFMPEG_VideoReader(filename, pix_fmt=pix_fmt,
+    │             │                  │                 └ 'rgb24'
+    │             │                  └ '400923372'
+    │             └ <class 'moviepy.video.io.ffmpeg_reader.FFMPEG_VideoReader'>
+    └ <moviepy.video.io.VideoFileClip.VideoFileClip object at 0x116553e50>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/moviepy/video/io/ffmpeg_reader.py", line 35, in __init__
+    infos = ffmpeg_parse_infos(filename, print_infos, check_duration,
+            │                  │         │            └ True
+            │                  │         └ False
+            │                  └ '400923372'
+            └ <function ffmpeg_parse_infos at 0x10bb205e0>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/moviepy/video/io/ffmpeg_reader.py", line 270, in ffmpeg_parse_infos
+    raise IOError(("MoviePy error: the file %s could not be found!\n"
+
+OSError: MoviePy error: the file 400923372 could not be found!
+Please check that you entered the correct path.
+2022-10-08 18:44:38.358 | ERROR    | aiogram.dispatcher.handler:notify:116 - An error has been caught in function 'notify', process 'MainProcess' (4033), thread 'MainThread' (4488156672):
+Traceback (most recent call last):
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 103, in <module>
+    executor.start_polling(dp)
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x10f954190>
+    │        └ <function start_polling at 0x10f9225f0>
+    └ <module 'aiogram.utils.executor' from '/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/util...
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x10f923010>
+    └ <aiogram.utils.executor.Executor object at 0x10f955150>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x100aefac0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 595, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x100afd630>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 1881, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x100978310>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 51774211, "message": {"message_id": 127, "from": {"id": 400923372, "is_bot": false, "first_name": "Log...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x10f954190>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1...
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x10f80f100>
+                 │    │                │      └ <Update {"update_id": 51774211, "message": {"message_id": 127, "from": {"id": 400923372, "is_bot": false, "first_name": "Loga...
+                 │    │                └ <function Handler.notify at 0x10f84d630>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x10f9542b0>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x10f954190>
+> File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Message {"message_id": 127, "from": {"id": 400923372, "is_bot": false, "first_name": "Logan", "last_name": "Wyne", "usernam...
+                     │           └ <function handle_docs_photo at 0x10f94d990>
+                     └ Handler.HandlerObj(handler=<function handle_docs_photo at 0x10f94d990>, spec=FullArgSpec(args=['message'], varargs=None, vark...
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 57, in handle_docs_photo
+    await bot.send_video_note(name, video_note=open(f'${name}.mp4', 'rb'))#f'{name}.mp4')#f'{name}.png')
+          │   │               └ 400923372
+          │   └ <function Bot.send_video_note at 0x10f8396c0>
+          └ <aiogram.bot.bot.Bot object at 0x10f954130>
+
+FileNotFoundError: [Errno 2] No such file or directory: '$400923372.mp4'
+2022-10-08 18:49:31.439 | ERROR    | aiogram.dispatcher.handler:notify:116 - An error has been caught in function 'notify', process 'MainProcess' (4149), thread 'MainThread' (4534748672):
+Traceback (most recent call last):
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 88, in <module>
+    executor.start_polling(dp)
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1185c3eb0>
+    │        └ <function start_polling at 0x1185e6560>
+    └ <module 'aiogram.utils.executor' from '/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/util...
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x1185e6f80>
+    └ <aiogram.utils.executor.Executor object at 0x118608eb0>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x109787a30>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 595, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x1097915a0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 1881, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x109610280>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 51774213, "message": {"message_id": 130, "from": {"id": 400923372, "is_bot": false, "first_name": "Log...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1185c3eb0>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1...
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x1184bee60>
+                 │    │                │      └ <Update {"update_id": 51774213, "message": {"message_id": 130, "from": {"id": 400923372, "is_bot": false, "first_name": "Loga...
+                 │    │                └ <function Handler.notify at 0x1185015a0>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x1185c3fd0>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1185c3eb0>
+> File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Message {"message_id": 130, "from": {"id": 400923372, "is_bot": false, "first_name": "Logan", "last_name": "Wyne", "usernam...
+                     │           └ <function handle_docs_photo at 0x118601900>
+                     └ Handler.HandlerObj(handler=<function handle_docs_photo at 0x118601900>, spec=FullArgSpec(args=['message'], varargs=None, vark...
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 43, in handle_docs_photo
+    await bot.send_video_note(name, video_note=f'0{name}.mp4')#open(f'0{name}.mp4', 'rb'))#f'{name}.mp4')#f'{name}.png')
+          │   │               └ 400923372
+          │   └ <function Bot.send_video_note at 0x1184e9630>
+          └ <aiogram.bot.bot.Bot object at 0x1185c3e50>
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/bot/bot.py", line 1065, in send_video_note
+    result = await self.request(api.Methods.SEND_VIDEO_NOTE, payload, files)
+                   │    │       │   │       │                │        └ {}
+                   │    │       │   │       │                └ {'chat_id': 400923372, 'video_note': '0400923372.mp4'}
+                   │    │       │   │       └ <aiogram.utils.helper.Item object at 0x1184d1990>
+                   │    │       │   └ <class 'aiogram.bot.api.Methods'>
+                   │    │       └ <module 'aiogram.bot.api' from '/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/bot/api.py'>
+                   │    └ <function BaseBot.request at 0x1184af5b0>
+                   └ <aiogram.bot.bot.Bot object at 0x1185c3e50>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+                 │   │                  │    │              │    │       │             │       │     └ {}
+                 │   │                  │    │              │    │       │             │       └ {'chat_id': 400923372, 'video_note': '0400923372.mp4'}
+                 │   │                  │    │              │    │       │             └ 'sendVideoNote'
+                 │   │                  │    │              │    │       └ <aiogram.bot.bot.Bot object at 0x1185c3e50>
+                 │   │                  │    │              │    └ TelegramAPIServer(base='https://api.telegram.org/bot{token}/{method}', file='https://api.telegram.org/file/bot{token}/{path}')
+                 │   │                  │    │              └ <aiogram.bot.bot.Bot object at 0x1185c3e50>
+                 │   │                  │    └ <function BaseBot.get_session at 0x1184aee60>
+                 │   │                  └ <aiogram.bot.bot.Bot object at 0x1185c3e50>
+                 │   └ <function make_request at 0x1184ae3b0>
+                 └ <module 'aiogram.bot.api' from '/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/bot/api.py'>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           │            │       │        │             │        │             │        └ <function ClientResponse.text at 0x1180876d0>
+           │            │       │        │             │        │             └ <ClientResponse(https://api.telegram.org/bot5536834369:AAG3CSz2VQU3aV6Qm1ilAl37e9w_jBXLv50/sendVideoNote) [400 Bad Request]>
+           │            │       │        │             │        │               ...
+           │            │       │        │             │        └ 400
+           │            │       │        │             └ <ClientResponse(https://api.telegram.org/bot5536834369:AAG3CSz2VQU3aV6Qm1ilAl37e9w_jBXLv50/sendVideoNote) [400 Bad Request]>
+           │            │       │        │               ...
+           │            │       │        └ <property object at 0x117ff45e0>
+           │            │       └ <ClientResponse(https://api.telegram.org/bot5536834369:AAG3CSz2VQU3aV6Qm1ilAl37e9w_jBXLv50/sendVideoNote) [400 Bad Request]>
+           │            │         ...
+           │            └ 'sendVideoNote'
+           └ <function check_result at 0x1184ae0e0>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/bot/api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+    │          │          │      └ 'Bad Request: failed to get HTTP URL content'
+    │          │          └ <classmethod(<function _MatchErrorMixin.detect at 0x1182f4670>)>
+    │          └ <class 'aiogram.utils.exceptions.BadRequest'>
+    └ <module 'aiogram.utils.exceptions' from '/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/ut...
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+          │   │   │       └ 'bad request: failed to get http url content'
+          │   │   └ None
+          │   └ <class 'aiogram.utils.exceptions.BadRequest'>
+          └ <class 'aiogram.utils.exceptions.InvalidHTTPUrlContent'>
+
+aiogram.utils.exceptions.InvalidHTTPUrlContent: Failed to get http url content
+2022-10-08 18:54:46.075 | ERROR    | aiogram.dispatcher.handler:notify:116 - An error has been caught in function 'notify', process 'MainProcess' (4227), thread 'MainThread' (4791195136):
+Traceback (most recent call last):
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 90, in <module>
+    executor.start_polling(dp)
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x11d4580d0>
+    │        └ <function start_polling at 0x110299510>
+    └ <module 'aiogram.utils.executor' from '/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/util...
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x110299f30>
+    └ <aiogram.utils.executor.Executor object at 0x11d459090>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x10e87fa30>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 595, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x10e88d5a0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 1881, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x10e708280>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 51774214, "message": {"message_id": 131, "from": {"id": 400923372, "is_bot": false, "first_name": "Log...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x11d4580d0>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1...
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x110157430>
+                 │    │                │      └ <Update {"update_id": 51774214, "message": {"message_id": 131, "from": {"id": 400923372, "is_bot": false, "first_name": "Loga...
+                 │    │                └ <function Handler.notify at 0x1101cc550>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x11d4581f0>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x11d4580d0>
+> File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Message {"message_id": 131, "from": {"id": 400923372, "is_bot": false, "first_name": "Logan", "last_name": "Wyne", "usernam...
+                     │           └ <function handle_docs_photo at 0x11cf85870>
+                     └ Handler.HandlerObj(handler=<function handle_docs_photo at 0x11cf85870>, spec=FullArgSpec(args=['message'], varargs=None, vark...
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 45, in handle_docs_photo
+    await bot.send_video_note(name, video_note= InputFile('0{name}.mp4'))#open(f'0{name}.mp4', 'rb'))#f'{name}.mp4')#f'{name}.png')
+          │   │               │                 └ <class 'aiogram.types.input_file.InputFile'>
+          │   │               └ 400923372
+          │   └ <function Bot.send_video_note at 0x1101a05e0>
+          └ <aiogram.bot.bot.Bot object at 0x11cf43fd0>
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/types/input_file.py", line 40, in __init__
+    self._file = open(path_or_bytesio, 'rb')
+    │                 └ '0{name}.mp4'
+    └ <unprintable InputFile object>
+
+FileNotFoundError: [Errno 2] No such file or directory: '0{name}.mp4'
+2022-10-08 19:11:49.200 | ERROR    | aiogram.dispatcher.handler:notify:116 - An error has been caught in function 'notify', process 'MainProcess' (4547), thread 'MainThread' (4487861760):
+Traceback (most recent call last):
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 92, in <module>
+    executor.start_polling(dp)
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1111ec220>
+    │        └ <function start_polling at 0x1045c5510>
+    └ <module 'aiogram.utils.executor' from '/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/util...
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x1045c5f30>
+    └ <aiogram.utils.executor.Executor object at 0x1111ed1e0>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x102bafa30>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 595, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x102bb95a0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 1881, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x102a34280>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 51774222, "message": {"message_id": 146, "from": {"id": 400923372, "is_bot": false, "first_name": "Log...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1111ec220>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1...
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x1044835b0>
+                 │    │                │      └ <Update {"update_id": 51774222, "message": {"message_id": 146, "from": {"id": 400923372, "is_bot": false, "first_name": "Loga...
+                 │    │                └ <function Handler.notify at 0x1044f4550>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x1111ec340>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1111ec220>
+> File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Message {"message_id": 146, "from": {"id": 400923372, "is_bot": false, "first_name": "Logan", "last_name": "Wyne", "usernam...
+                     │           └ <function handle_docs_photo at 0x1111e9870>
+                     └ Handler.HandlerObj(handler=<function handle_docs_photo at 0x1111e9870>, spec=FullArgSpec(args=['message'], varargs=None, vark...
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 47, in handle_docs_photo
+    logger.debug(a['file_id'])
+    │      │     └ <Message {"message_id": 147, "from": {"id": 5536834369, "is_bot": true, "first_name": "ddksta_bot", "username": "ddkstaBot"},...
+    │      └ <function Logger.debug at 0x1032e69e0>
+    └ <loguru.logger handlers=[(id=0, level=10, sink=<stderr>), (id=1, level=20, sink='log.log')]>
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/types/base.py", line 234, in __getitem__
+    return self.values[item]
+           │    │      └ 'file_id'
+           │    └ <property object at 0x1042b28e0>
+           └ <Message {"message_id": 147, "from": {"id": 5536834369, "is_bot": true, "first_name": "ddksta_bot", "username": "ddkstaBot"},...
+
+KeyError: 'file_id'
+2022-10-08 19:12:54.929 | ERROR    | aiogram.dispatcher.handler:notify:116 - An error has been caught in function 'notify', process 'MainProcess' (4581), thread 'MainThread' (4562302464):
+Traceback (most recent call last):
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 92, in <module>
+    executor.start_polling(dp)
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1130f8250>
+    │        └ <function start_polling at 0x105e71510>
+    └ <module 'aiogram.utils.executor' from '/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/util...
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x105e71f30>
+    └ <aiogram.utils.executor.Executor object at 0x1130f9210>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x104433a30>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 595, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x10443d5a0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 1881, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x1042bc280>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 51774223, "message": {"message_id": 148, "from": {"id": 400923372, "is_bot": false, "first_name": "Log...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1130f8250>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1...
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x105d2f5e0>
+                 │    │                │      └ <Update {"update_id": 51774223, "message": {"message_id": 148, "from": {"id": 400923372, "is_bot": false, "first_name": "Loga...
+                 │    │                └ <function Handler.notify at 0x105da4550>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x1130f8370>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1130f8250>
+> File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Message {"message_id": 148, "from": {"id": 400923372, "is_bot": false, "first_name": "Logan", "last_name": "Wyne", "usernam...
+                     │           └ <function handle_docs_photo at 0x1130f1870>
+                     └ Handler.HandlerObj(handler=<function handle_docs_photo at 0x1130f1870>, spec=FullArgSpec(args=['message'], varargs=None, vark...
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 47, in handle_docs_photo
+    logger.debug(a.document.id)
+    │      │     │ └ <aiogram.types.fields.Field object at 0x105ce7010>
+    │      │     └ <Message {"message_id": 149, "from": {"id": 5536834369, "is_bot": true, "first_name": "ddksta_bot", "username": "ddkstaBot"},...
+    │      └ <function Logger.debug at 0x104b6e9e0>
+    └ <loguru.logger handlers=[(id=0, level=10, sink=<stderr>), (id=1, level=20, sink='log.log')]>
+
+AttributeError: 'NoneType' object has no attribute 'id'
+2022-10-08 19:17:55.877 | ERROR    | aiogram.dispatcher.handler:notify:116 - An error has been caught in function 'notify', process 'MainProcess' (4738), thread 'MainThread' (4546516480):
+Traceback (most recent call last):
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 93, in <module>
+    executor.start_polling(dp)
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1183903a0>
+    │        └ <function start_polling at 0x10b035510>
+    └ <module 'aiogram.utils.executor' from '/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/util...
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x10b035f30>
+    └ <aiogram.utils.executor.Executor object at 0x118391360>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x1095e7a30>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 595, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x1095f15a0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 1881, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x109470280>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 51774227, "message": {"message_id": 157, "from": {"id": 400923372, "is_bot": false, "first_name": "Log...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1183903a0>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1...
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x10aeef730>
+                 │    │                │      └ <Update {"update_id": 51774227, "message": {"message_id": 157, "from": {"id": 400923372, "is_bot": false, "first_name": "Loga...
+                 │    │                └ <function Handler.notify at 0x10af64550>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x1183904c0>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1183903a0>
+> File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Message {"message_id": 157, "from": {"id": 400923372, "is_bot": false, "first_name": "Logan", "last_name": "Wyne", "usernam...
+                     │           └ <function handle_docs_photo at 0x11839d870>
+                     └ Handler.HandlerObj(handler=<function handle_docs_photo at 0x11839d870>, spec=FullArgSpec(args=['message'], varargs=None, vark...
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 47, in handle_docs_photo
+    file_id = a['video']['file_id']
+              └ <Message {"message_id": 158, "from": {"id": 5536834369, "is_bot": true, "first_name": "ddksta_bot", "username": "ddkstaBot"},...
+
+TypeError: 'NoneType' object is not subscriptable
+2022-10-08 19:18:15.954 | ERROR    | aiogram.dispatcher.handler:notify:116 - An error has been caught in function 'notify', process 'MainProcess' (4738), thread 'MainThread' (4546516480):
+Traceback (most recent call last):
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 93, in <module>
+    executor.start_polling(dp)
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1183903a0>
+    │        └ <function start_polling at 0x10b035510>
+    └ <module 'aiogram.utils.executor' from '/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/util...
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x10b035f30>
+    └ <aiogram.utils.executor.Executor object at 0x118391360>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x1095e7a30>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 595, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x1095f15a0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 1881, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x109470280>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 51774228, "message": {"message_id": 159, "from": {"id": 400923372, "is_bot": false, "first_name": "Log...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1183903a0>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1...
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x10aeef730>
+                 │    │                │      └ <Update {"update_id": 51774228, "message": {"message_id": 159, "from": {"id": 400923372, "is_bot": false, "first_name": "Loga...
+                 │    │                └ <function Handler.notify at 0x10af64550>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x1183904c0>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1183903a0>
+> File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Message {"message_id": 159, "from": {"id": 400923372, "is_bot": false, "first_name": "Logan", "last_name": "Wyne", "usernam...
+                     │           └ <function handle_docs_photo at 0x11839d870>
+                     └ Handler.HandlerObj(handler=<function handle_docs_photo at 0x11839d870>, spec=FullArgSpec(args=['message'], varargs=None, vark...
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 47, in handle_docs_photo
+    file_id = a['video']['file_id']
+              └ <Message {"message_id": 160, "from": {"id": 5536834369, "is_bot": true, "first_name": "ddksta_bot", "username": "ddkstaBot"},...
+
+TypeError: 'NoneType' object is not subscriptable
+2022-10-08 19:18:38.740 | ERROR    | aiogram.dispatcher.handler:notify:116 - An error has been caught in function 'notify', process 'MainProcess' (4738), thread 'MainThread' (4546516480):
+Traceback (most recent call last):
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 93, in <module>
+    executor.start_polling(dp)
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1183903a0>
+    │        └ <function start_polling at 0x10b035510>
+    └ <module 'aiogram.utils.executor' from '/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/util...
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x10b035f30>
+    └ <aiogram.utils.executor.Executor object at 0x118391360>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x1095e7a30>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 595, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x1095f15a0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 1881, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x109470280>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 51774229, "message": {"message_id": 161, "from": {"id": 400923372, "is_bot": false, "first_name": "Log...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1183903a0>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1...
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x10aeef730>
+                 │    │                │      └ <Update {"update_id": 51774229, "message": {"message_id": 161, "from": {"id": 400923372, "is_bot": false, "first_name": "Loga...
+                 │    │                └ <function Handler.notify at 0x10af64550>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x1183904c0>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1183903a0>
+> File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Message {"message_id": 161, "from": {"id": 400923372, "is_bot": false, "first_name": "Logan", "last_name": "Wyne", "usernam...
+                     │           └ <function handle_docs_photo at 0x11839d870>
+                     └ Handler.HandlerObj(handler=<function handle_docs_photo at 0x11839d870>, spec=FullArgSpec(args=['message'], varargs=None, vark...
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 48, in handle_docs_photo
+    a = await bot.send_video_note(name, video_note= file_id,length=720)
+              │   │               │                 └ 'BAACAgIAAxkDAAOiY0Gi3ozllT_2iU1S3ARm-yRc8VoAAgsdAAKEDAlKjfh--KLxJukqBA'
+              │   │               └ 400923372
+              │   └ <function Bot.send_video_note at 0x10af385e0>
+              └ <aiogram.bot.bot.Bot object at 0x118390340>
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/bot/bot.py", line 1065, in send_video_note
+    result = await self.request(api.Methods.SEND_VIDEO_NOTE, payload, files)
+                   │    │       │   │       │                │        └ {}
+                   │    │       │   │       │                └ {'chat_id': 400923372, 'length': 720, 'video_note': 'BAACAgIAAxkDAAOiY0Gi3ozllT_2iU1S3ARm-yRc8VoAAgsdAAKEDAlKjfh--KLxJukqBA'}
+                   │    │       │   │       └ <aiogram.utils.helper.Item object at 0x10af02230>
+                   │    │       │   └ <class 'aiogram.bot.api.Methods'>
+                   │    │       └ <module 'aiogram.bot.api' from '/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/bot/api.py'>
+                   │    └ <function BaseBot.request at 0x10af26560>
+                   └ <aiogram.bot.bot.Bot object at 0x118390340>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+                 │   │                  │    │              │    │       │             │       │     └ {}
+                 │   │                  │    │              │    │       │             │       └ {'chat_id': 400923372, 'length': 720, 'video_note': 'BAACAgIAAxkDAAOiY0Gi3ozllT_2iU1S3ARm-yRc8VoAAgsdAAKEDAlKjfh--KLxJukqBA'}
+                 │   │                  │    │              │    │       │             └ 'sendVideoNote'
+                 │   │                  │    │              │    │       └ <aiogram.bot.bot.Bot object at 0x118390340>
+                 │   │                  │    │              │    └ TelegramAPIServer(base='https://api.telegram.org/bot{token}/{method}', file='https://api.telegram.org/file/bot{token}/{path}')
+                 │   │                  │    │              └ <aiogram.bot.bot.Bot object at 0x118390340>
+                 │   │                  │    └ <function BaseBot.get_session at 0x10af25e10>
+                 │   │                  └ <aiogram.bot.bot.Bot object at 0x118390340>
+                 │   └ <function make_request at 0x10aee5750>
+                 └ <module 'aiogram.bot.api' from '/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/bot/api.py'>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           │            │       │        │             │        │             │        └ <function ClientResponse.text at 0x10a951480>
+           │            │       │        │             │        │             └ <ClientResponse(https://api.telegram.org/bot5536834369:AAG3CSz2VQU3aV6Qm1ilAl37e9w_jBXLv50/sendVideoNote) [400 Bad Request]>
+           │            │       │        │             │        │               ...
+           │            │       │        │             │        └ 400
+           │            │       │        │             └ <ClientResponse(https://api.telegram.org/bot5536834369:AAG3CSz2VQU3aV6Qm1ilAl37e9w_jBXLv50/sendVideoNote) [400 Bad Request]>
+           │            │       │        │               ...
+           │            │       │        └ <property object at 0x10a8322a0>
+           │            │       └ <ClientResponse(https://api.telegram.org/bot5536834369:AAG3CSz2VQU3aV6Qm1ilAl37e9w_jBXLv50/sendVideoNote) [400 Bad Request]>
+           │            │         ...
+           │            └ 'sendVideoNote'
+           └ <function check_result at 0x10aee5480>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/bot/api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+    │          │          │      └ 'Bad Request: wrong video note length'
+    │          │          └ <classmethod(<function _MatchErrorMixin.detect at 0x10acf7010>)>
+    │          └ <class 'aiogram.utils.exceptions.BadRequest'>
+    └ <module 'aiogram.utils.exceptions' from '/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/ut...
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 141, in detect
+    raise cls(description)
+          │   └ 'bad request: wrong video note length'
+          └ <class 'aiogram.utils.exceptions.BadRequest'>
+
+aiogram.utils.exceptions.BadRequest: Wrong video note length
+2022-10-08 19:20:14.294 | ERROR    | aiogram.dispatcher.handler:notify:116 - An error has been caught in function 'notify', process 'MainProcess' (4796), thread 'MainThread' (4535379456):
+Traceback (most recent call last):
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 93, in <module>
+    executor.start_polling(dp)
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x110338340>
+    │        └ <function start_polling at 0x103415510>
+    └ <module 'aiogram.utils.executor' from '/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/util...
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x103415f30>
+    └ <aiogram.utils.executor.Executor object at 0x110339300>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x1019cba30>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 595, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x1019d55a0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 1881, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x101850280>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 51774231, "message": {"message_id": 166, "from": {"id": 400923372, "is_bot": false, "first_name": "Log...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x110338340>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1...
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x1032cf6d0>
+                 │    │                │      └ <Update {"update_id": 51774231, "message": {"message_id": 166, "from": {"id": 400923372, "is_bot": false, "first_name": "Loga...
+                 │    │                └ <function Handler.notify at 0x103344550>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x110338460>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x110338340>
+> File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Message {"message_id": 166, "from": {"id": 400923372, "is_bot": false, "first_name": "Logan", "last_name": "Wyne", "usernam...
+                     │           └ <function handle_docs_photo at 0x110345870>
+                     └ Handler.HandlerObj(handler=<function handle_docs_photo at 0x110345870>, spec=FullArgSpec(args=['message'], varargs=None, vark...
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 47, in handle_docs_photo
+    file_id = a['video']['file_id']
+              └ <Message {"message_id": 167, "from": {"id": 5536834369, "is_bot": true, "first_name": "ddksta_bot", "username": "ddkstaBot"},...
+
+TypeError: 'NoneType' object is not subscriptable
+2022-10-08 19:23:29.770 | ERROR    | aiogram.dispatcher.handler:notify:116 - An error has been caught in function 'notify', process 'MainProcess' (4874), thread 'MainThread' (4443534848):
+Traceback (most recent call last):
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 94, in <module>
+    executor.start_polling(dp)
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1136a0340>
+    │        └ <function start_polling at 0x106765510>
+    └ <module 'aiogram.utils.executor' from '/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/util...
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x106765f30>
+    └ <aiogram.utils.executor.Executor object at 0x1136a1300>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x104d1ba30>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 595, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x104d255a0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 1881, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x104ba0280>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 51774234, "message": {"message_id": 174, "from": {"id": 400923372, "is_bot": false, "first_name": "Log...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1136a0340>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1...
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x10661f6d0>
+                 │    │                │      └ <Update {"update_id": 51774234, "message": {"message_id": 174, "from": {"id": 400923372, "is_bot": false, "first_name": "Loga...
+                 │    │                └ <function Handler.notify at 0x106698550>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x1136a0460>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1136a0340>
+> File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Message {"message_id": 174, "from": {"id": 400923372, "is_bot": false, "first_name": "Logan", "last_name": "Wyne", "usernam...
+                     │           └ <function handle_docs_photo at 0x1136a9870>
+                     └ Handler.HandlerObj(handler=<function handle_docs_photo at 0x1136a9870>, spec=FullArgSpec(args=['message'], varargs=None, vark...
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 48, in handle_docs_photo
+    file_id = a['video']['file_id']
+              └ <Message {"message_id": 175, "from": {"id": 5536834369, "is_bot": true, "first_name": "ddksta_bot", "username": "ddkstaBot"},...
+
+TypeError: 'NoneType' object is not subscriptable
+2022-10-08 19:24:47.525 | ERROR    | aiogram.dispatcher.handler:notify:116 - An error has been caught in function 'notify', process 'MainProcess' (4874), thread 'MainThread' (4443534848):
+Traceback (most recent call last):
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 94, in <module>
+    executor.start_polling(dp)
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1136a0340>
+    │        └ <function start_polling at 0x106765510>
+    └ <module 'aiogram.utils.executor' from '/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/util...
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x106765f30>
+    └ <aiogram.utils.executor.Executor object at 0x1136a1300>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x104d1ba30>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 595, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x104d255a0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 1881, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x104ba0280>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 51774235, "message": {"message_id": 176, "from": {"id": 400923372, "is_bot": false, "first_name": "Log...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1136a0340>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1...
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x10661f6d0>
+                 │    │                │      └ <Update {"update_id": 51774235, "message": {"message_id": 176, "from": {"id": 400923372, "is_bot": false, "first_name": "Loga...
+                 │    │                └ <function Handler.notify at 0x106698550>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x1136a0460>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1136a0340>
+> File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Message {"message_id": 176, "from": {"id": 400923372, "is_bot": false, "first_name": "Logan", "last_name": "Wyne", "usernam...
+                     │           └ <function handle_docs_photo at 0x1136a9870>
+                     └ Handler.HandlerObj(handler=<function handle_docs_photo at 0x1136a9870>, spec=FullArgSpec(args=['message'], varargs=None, vark...
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 48, in handle_docs_photo
+    file_id = a['video']['file_id']
+              └ <Message {"message_id": 177, "from": {"id": 5536834369, "is_bot": true, "first_name": "ddksta_bot", "username": "ddkstaBot"},...
+
+TypeError: 'NoneType' object is not subscriptable
+2022-10-08 19:30:07.815 | ERROR    | aiogram.dispatcher.handler:notify:116 - An error has been caught in function 'notify', process 'MainProcess' (5016), thread 'MainThread' (4579595776):
+Traceback (most recent call last):
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 68, in <module>
+    executor.start_polling(dp)
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x10fe438e0>
+    │        └ <function start_polling at 0x1031a1510>
+    └ <module 'aiogram.utils.executor' from '/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/util...
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x1031a1f30>
+    └ <aiogram.utils.executor.Executor object at 0x1103548e0>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x10174fa30>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 595, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x10175d5a0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 1881, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x1015dc280>
+    └ <Handle <TaskStepMethWrapper object at 0x1103572b0>()>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskStepMethWrapper object at 0x1103572b0>()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskStepMethWrapper object at 0x1103572b0>()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskStepMethWrapper object at 0x1103572b0>()>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 51774236, "message": {"message_id": 178, "from": {"id": 400923372, "is_bot": false, "first_name": "Log...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x10fe438e0>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1...
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x10305ec80>
+                 │    │                │      └ <Update {"update_id": 51774236, "message": {"message_id": 178, "from": {"id": 400923372, "is_bot": false, "first_name": "Loga...
+                 │    │                └ <function Handler.notify at 0x1030d0550>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x10fe43a00>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x10fe438e0>
+> File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Message {"message_id": 178, "from": {"id": 400923372, "is_bot": false, "first_name": "Logan", "last_name": "Wyne", "usernam...
+                     │           └ <function handle_docs_photo at 0x110345870>
+                     └ Handler.HandlerObj(handler=<function handle_docs_photo at 0x110345870>, spec=FullArgSpec(args=['message'], varargs=None, vark...
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 45, in handle_docs_photo
+    firstName = message.name
+                └ <Message {"message_id": 178, "from": {"id": 400923372, "is_bot": false, "first_name": "Logan", "last_name": "Wyne", "username...
+
+AttributeError: 'Message' object has no attribute 'name'
+2022-10-08 19:30:42.840 | ERROR    | aiogram.dispatcher.handler:notify:116 - An error has been caught in function 'notify', process 'MainProcess' (5039), thread 'MainThread' (4604597760):
+Traceback (most recent call last):
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 68, in <module>
+    executor.start_polling(dp)
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x11cf87880>
+    │        └ <function start_polling at 0x11005d510>
+    └ <module 'aiogram.utils.executor' from '/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/util...
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x11005df30>
+    └ <aiogram.utils.executor.Executor object at 0x11d498880>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x10e643a30>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 595, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x10e6515a0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 1881, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x10e4cc280>
+    └ <Handle <TaskStepMethWrapper object at 0x11d49b250>()>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskStepMethWrapper object at 0x11d49b250>()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskStepMethWrapper object at 0x11d49b250>()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskStepMethWrapper object at 0x11d49b250>()>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 51774237, "message": {"message_id": 179, "from": {"id": 400923372, "is_bot": false, "first_name": "Log...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x11cf87880>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1...
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x10ff1ec20>
+                 │    │                │      └ <Update {"update_id": 51774237, "message": {"message_id": 179, "from": {"id": 400923372, "is_bot": false, "first_name": "Loga...
+                 │    │                └ <function Handler.notify at 0x10ff90550>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x11cf879a0>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x11cf87880>
+> File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Message {"message_id": 179, "from": {"id": 400923372, "is_bot": false, "first_name": "Logan", "last_name": "Wyne", "usernam...
+                     │           └ <function handle_docs_photo at 0x11cfc5870>
+                     └ Handler.HandlerObj(handler=<function handle_docs_photo at 0x11cfc5870>, spec=FullArgSpec(args=['message'], varargs=None, vark...
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 45, in handle_docs_photo
+    firstName = message.first_name
+                └ <Message {"message_id": 179, "from": {"id": 400923372, "is_bot": false, "first_name": "Logan", "last_name": "Wyne", "username...
+
+AttributeError: 'Message' object has no attribute 'first_name'
+2022-10-08 19:30:58.504 | ERROR    | aiogram.dispatcher.handler:notify:116 - An error has been caught in function 'notify', process 'MainProcess' (5058), thread 'MainThread' (4472329728):
+Traceback (most recent call last):
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 68, in <module>
+    executor.start_polling(dp)
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x10dc5b7f0>
+    │        └ <function start_polling at 0x10a415510>
+    └ <module 'aiogram.utils.executor' from '/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/util...
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x10a415f30>
+    └ <aiogram.utils.executor.Executor object at 0x1173d07f0>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x1089c7a30>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 595, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x1089d55a0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 1881, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x108850280>
+    └ <Handle <TaskStepMethWrapper object at 0x1173d31c0>()>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskStepMethWrapper object at 0x1173d31c0>()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskStepMethWrapper object at 0x1173d31c0>()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskStepMethWrapper object at 0x1173d31c0>()>
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 51774238, "message": {"message_id": 180, "from": {"id": 400923372, "is_bot": false, "first_name": "Log...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x10dc5b7f0>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x1...
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x10a2d2b90>
+                 │    │                │      └ <Update {"update_id": 51774238, "message": {"message_id": 180, "from": {"id": 400923372, "is_bot": false, "first_name": "Loga...
+                 │    │                └ <function Handler.notify at 0x10a344550>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x10dc5b910>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x10dc5b7f0>
+> File "/Users/igorgerasimov/Python/DDKGTA/circleBot/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Message {"message_id": 180, "from": {"id": 400923372, "is_bot": false, "first_name": "Logan", "last_name": "Wyne", "usernam...
+                     │           └ <function handle_docs_photo at 0x1173c1870>
+                     └ Handler.HandlerObj(handler=<function handle_docs_photo at 0x1173c1870>, spec=FullArgSpec(args=['message'], varargs=None, vark...
+
+  File "/Users/igorgerasimov/Python/DDKGTA/circleBot/circleBot.py", line 46, in handle_docs_photo
+    logger.info(f'{firstName} ')
+    │      └ <function Logger.info at 0x109102a70>
+    └ <loguru.logger handlers=[(id=0, level=10, sink=<stderr>), (id=1, level=20, sink='log.log')]>
+
+NameError: name 'firstName' is not defined
